@@ -9,3 +9,8 @@ I wrote jq's codes inside shell variable because I did not found a way to use na
 ## My goal
 
 Have ready-to-use jq functions and/or shell utils to quickly manage json data.
+
+## Other interesting sources
+
+- https://github.com/stedolan/jq/wiki/Cookbook
+- https://github.com/fadado/JBOL
