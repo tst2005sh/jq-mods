@@ -14,13 +14,13 @@ def greplike($pat;$testflags;PRE;INVERT):
 	if (type!="array") then
 		greplike_direct($pat;$testflags;PRE;INVERT) # [1]
 
-	else if ((first?|type)=="object") then
+	elif ((first?|type)=="object") then
 		map(greplike_direct($pat;$testflags;PRE;INVERT)) # [2]
 
 	else
 		with_entries2(greplike_direct($pat;$testflags;PRE;INVERT)) #[3]
 		#map(greplike_direct($pat;$testflags;.;INVERT)) # [3b]
-	end end
+	end
 ;
 def grepv($pat): greplike($pat;"";.value;not);
 def grepv($pat;PRE): greplike($pat;"";PRE;not);
