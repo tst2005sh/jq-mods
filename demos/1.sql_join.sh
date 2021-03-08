@@ -1,6 +1,4 @@
-. ./lib/from_entries2.jq.lib.sh
-. ./lib/with_entries2.jq.lib.sh
-. ./lib/grep.jq.lib.sh
+
 if jq --version |grep -q 'jq-1\.5'; then
 	. ./lib/jq16sqlbuiltin.jq.lib.sh
 else
