@@ -34,4 +34,4 @@ def grep($pat;PRE): greplike($pat;"";PRE;.);
 def igrep($pat): greplike($pat;"i";.value;.);
 def igrep($pat;PRE): greplike($pat;"i";PRE;.);
 '
-
+#deps:with_entries2

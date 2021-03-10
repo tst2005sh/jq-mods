@@ -5,4 +5,4 @@
 #}
 
 jq_function_array_to_csv='def array_to_csv: .[]|@csv;'
- 
+#deps:none

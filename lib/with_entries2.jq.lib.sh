@@ -1,9 +1,10 @@
 
 jq_function_with_entries2='
-def with_entries2(_stmt):
+def with_entries2(f):
 	if (type=="array") then (
-		to_entries | map(_stmt) | from_entries2("array")
+		to_entries | map(f) | from_entries2("array")
 	) else (
-		to_entries | map(_stmt) | from_entries2("object")
+		to_entries | map(f) | from_entries2("object")
 	) end
 ;'
+#deps:from_entries2

@@ -1,4 +1,3 @@
-# source: https://github.com/joelpurra/jq-math/blob/master/jq/main.jq
 
 jq_function_round_decimals='
 def round($decimals):
@@ -22,3 +21,6 @@ def round($decimals):
 
 #def round: round(0);
 '
+#deps:pow
+
+# source: https://github.com/joelpurra/jq-math/blob/master/jq/main.jq
