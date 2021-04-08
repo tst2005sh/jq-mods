@@ -1,4 +1,6 @@
 
+# pow already exist in jq 1.5 !
+
 jq_function_pow='
 def pow($base; $n):
 	1 | reduce range($n) as $i (

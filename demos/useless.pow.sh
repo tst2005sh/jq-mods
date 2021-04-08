@@ -1,4 +1,6 @@
-. ./lib/pow.jq.lib.sh
+# jq 1.5 already include pow()
+
+. ./lib-useless/pow.jq.lib.sh
 
 echo '
 [10,3,1000]
