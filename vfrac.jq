@@ -1,7 +1,7 @@
 def multiply: reduce .[] as $item (1;.*$item);
 
 #def is_in_array($a): . as $x|$a|map(select(.==$x)!=null)|first//false;
-def is_in_array($a): length>(($a-[.])|length);
+def is_in_array($a): ($a|length)>(($a-[.])|length);
 
 def assert_type($t):
 	if $t|type=="string" then
