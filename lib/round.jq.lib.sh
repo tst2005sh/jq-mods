@@ -1,17 +1,10 @@
 
 jq_function_round='
-def round:
-	. as $x
-	| (if $x < 0 then -1 else 1 end) as $sign
-	| ((($x * $sign)+0.5)|floor)
-	| (. * $sign)
-;'
+def round: (if . < 0 then -1 else 1 end) as $sign | (.*$sign + 0.5) | floor * $sign;'
 #deps:none
 
 jq_function_round_precision='
-def round($n):
-	. as $x
-	| (pow(10;$n)) as $m
-	| ($x * $m | round / $m)
-;'
+def round($n;$base): (pow($base//10;$n)) as $m | (.*$m | round / $m);
+def round($n): round($n;10);
+'
 #deps:pow
