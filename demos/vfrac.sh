@@ -56,5 +56,5 @@ test11a,test11b,test11c
 '
 
 jq -ncM "$jq_function_multiply$jq_function_is_in_array$jq_function_assert_type$jq_function_vfrac$jq_tests"'
-[tests]
+tests
 '

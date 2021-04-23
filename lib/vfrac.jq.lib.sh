@@ -1,5 +1,5 @@
 jq_function_vfrac='
-# require: multiply is_in_array assert_type
+# require: multiply is_in_array assert_type eachother
 
 def vtype: assert_type("object")| .type?;
 def assert_vtype($t):
@@ -41,8 +41,13 @@ def vfractonumber:
 def vfrac_insert($where;$by):
 	assert_vtype("frac")|
 	($by|vnumtonumber) as $b|
-	.frac[$where].vnum=[.frac[$where].vnum[],$b]
+	(vvalue[$where]|assert_vtype("vnum")|vvalue) |= (.+=[$b])
 ;
 def vfrac_div($by): vfrac_insert("down";$by);
 def vfrac_mul($by): vfrac_insert("up";$by);
+
+#def eachother(f): reduce .[] as $item (null;[.,$item]|f);
+
+#def vadd: eachother( (.[0]//0) + .[1] ) ;
+#def vmultiply: eachother( (.[0]//1) * .[1] );
 '
