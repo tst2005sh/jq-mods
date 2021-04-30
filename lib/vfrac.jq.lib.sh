@@ -16,11 +16,11 @@ def vnum: if type=="number" then [.] else . end|vobj("vnum");
 def vfrac: ({"up": .[0]|vnum, down:.[1]|vnum})|vobj("frac");
 
 def vfracsimplify:
-	assert_vtype("frac")|
-	(.frac.up|assert_vtype("vnum")|vvalue) as $up|
-	(.frac.down|assert_vtype("vnum")|vvalue) as $down|
-	.frac.up.vnum = ($up-$down)|
-	.frac.down.vnum = ($down-$up)
+	assert_vtype("frac")
+	| (.frac.up|assert_vtype("vnum")|vvalue) as $up
+	| (.frac.down|assert_vtype("vnum")|vvalue) as $down
+	| .frac.up.vnum = ($up-$down)
+	| .frac.down.vnum = ($down-$up)
 ;
 
 def vnumtonumber:
@@ -39,9 +39,9 @@ def vfractonumber:
 ;
 
 def vfrac_insert($where;$by):
-	assert_vtype("frac")|
-	($by|vnumtonumber) as $b|
-	(vvalue[$where]|assert_vtype("vnum")|vvalue) |= (.+=[$b])
+	assert_vtype("frac")
+	| ($by|vnumtonumber) as $b
+	| (vvalue[$where]|assert_vtype("vnum")|vvalue) |= (.+=[$b])
 ;
 def vfrac_div($by): vfrac_insert("down";$by);
 def vfrac_mul($by): vfrac_insert("up";$by);
