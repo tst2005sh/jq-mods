@@ -1,3 +1,4 @@
+jq_deps_avgsum='' # round?
 jq_function_avgsum='
 def _avgsum:
 	add as $sum

@@ -1,4 +1,11 @@
 
+jq_deps_round_precision='pow'
+jq_function_round_precision='
+def round($n;$base): (pow($base//10;$n)) as $m | (.*$m | round / $m);
+def round($n): round($n;10);
+'
+
+jq_deps_round_decimals='pow'
 jq_function_round_decimals='
 def round($decimals):
 	. as $x
@@ -18,9 +25,6 @@ def round($decimals):
 	| $integer + $rounding
 	| . / $shifter * $signNegator
 ;
-
 #def round: round(0);
 '
-#deps:pow
-
 # source: https://github.com/joelpurra/jq-math/blob/master/jq/main.jq

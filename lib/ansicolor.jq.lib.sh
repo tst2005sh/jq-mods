@@ -1,4 +1,4 @@
-
+jq_deps_ansicolor=''
 jq_function_ansicolor='
 def colorname2ansicolorseqOLD:
 	({	"reset":		"\u001b[0m"

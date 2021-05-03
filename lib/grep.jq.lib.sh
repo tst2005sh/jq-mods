@@ -4,6 +4,7 @@
 # 3. array of value	: convert to a list of object (use to_entries) the access is .value
 # 3b.			: we should just use map_values and access '.' but we can not be compatible with .value access 
 
+jq_deps_grep='with_entries2'
 jq_function_grep='
 
 def greplike_direct($pat;$testflags;PRE;INVERT):
@@ -34,4 +35,3 @@ def grep($pat;PRE): greplike($pat;"";PRE;.);
 def igrep($pat): greplike($pat;"i";.value;.);
 def igrep($pat;PRE): greplike($pat;"i";PRE;.);
 '
-#deps:with_entries2

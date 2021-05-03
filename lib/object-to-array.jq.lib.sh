@@ -10,9 +10,9 @@
 #	[ [.keys|sort], .data ] | flatten(1);
 #'
 
+jq_deps_object_to_array=''
 # thanks to geirha #jq 20180601
 jq_function_object_to_array='
 def object_to_array: ([.[]|keys[]]|unique) as $k | [$k,(.[]|[ .[$k[]] ])];
 def object_to_array($k): [$k,(.[]|[ .[$k[]] ])];
 '
-#deps:none

@@ -1,5 +1,6 @@
+
+jq_deps_vfrac='multiply is_in_array assert_type eachother'
 jq_function_vfrac='
-# require: multiply is_in_array assert_type eachother
 
 def vtype: assert_type("object")| .type?;
 def assert_vtype($t):

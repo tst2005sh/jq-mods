@@ -1,3 +1,5 @@
+
+jq_deps_color=''
 jq_function_color='
 def color:
 	if .==null or . == "" then empty else
