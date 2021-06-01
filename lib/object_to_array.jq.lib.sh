@@ -13,6 +13,11 @@
 jq_deps_object_to_array=''
 # thanks to geirha #jq 20180601
 jq_function_object_to_array='
-def object_to_array: ([.[]|keys[]]|unique) as $k | [$k,(.[]|[ .[$k[]] ])];
 def object_to_array($k): [$k,(.[]|[ .[$k[]] ])];
+def object_to_array: object_to_array([.[]|keys[]]|unique);
+def object_to_array($k;$z): if $z!="*" then object_to_array($k) else
+	([.[]|keys[]]|unique) as $a| object_to_array([$k, ($a-$k)]|add)
+end;
 '
+#def object_to_array: ([.[]|keys[]]|unique) as $k | [$k,(.[]|[ .[$k[]] ])];
+
