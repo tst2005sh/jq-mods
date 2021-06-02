@@ -1,8 +1,0 @@
-
-jq_deps_tocsv_common=''
-jq_function_tocsv_common='
-def csv_quote_if(f): if f then "\"\( gsub("\"";"\"\"") )\"" else . end;
-def csv_quote: csv_quote_if(test("\""));
-def csv_quote($opt): if $opt=="string" then csv_quote_if(type=="string") else csv_quote_if(test("\"")) end;
-def is_array_of_array: (type=="array") and (length>0) and (map(type=="array")|all);
-'
