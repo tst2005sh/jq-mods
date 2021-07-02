@@ -18,7 +18,7 @@ jq -n "$jq_function_dirname_filename"'
 ),(
 	"/.foo" | dirname_filename == ["/",".foo"]
 ),(
-	"///foo" | dirname_filename == ["/",".foo"]
+	"///foo" | dirname_filename == ["/","foo"]
 ),(
-	".///foo" | dirname_filename == [".",".foo"]
+	".///foo" | dirname_filename == [".","foo"]
 )'
