@@ -5,8 +5,8 @@ jq_function_fromtsv='def fromtsv:
 	map(if ((startswith("\"")) and (endswith("\""))) then
 		.[1:-1]|
 		gsub("\"\"";"\"")|
-		gsub("\\n";"\n")|gsub("\\r";"\r")|
-		gsub("\\t";"\t")|gsub("\\\\";"\\")
+		gsub("\\\\n";"\n")|gsub("\\\\r";"\r")|
+		gsub("\\\\t";"\t")|gsub("\\\\";"\\")
 	else .
 	end))
 ;'
