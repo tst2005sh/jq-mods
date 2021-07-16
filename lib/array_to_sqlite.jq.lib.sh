@@ -6,8 +6,7 @@ def sql_squote: "'\''\( gsub("'\''";"'\'\''") )'\''";
 def sql_dquote: "\"\( gsub("\"";"\"\"") )\"";
 def sql_tickquote: "`\(.)`";
 def sql_brackquote: "[\(.)]";
-def array_to_sqlite:
-	("data") as $tablename|
+def array_to_sqlite($tablename):
 	"PRAGMA foreign_keys=OFF;",
 	"BEGIN TRANSACTION;",
 	"CREATE TABLE \($tablename|sql_dquote) ( \(
@@ -22,5 +21,6 @@ def array_to_sqlite:
 		) );"
 	))[],
 	"COMMIT;"
-
-;'
+;
+def array_to_sqlite: array_to_sqlite("data");
+'
