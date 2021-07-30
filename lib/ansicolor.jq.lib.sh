@@ -37,11 +37,11 @@ def ansicolor_name_to_value:
 	,	"purple":		"35"
 	,	"cyan":			"36"
 	,	"white":		"37"
-	,	"bg_green":		"42"
 	,	"bg_hi_black":		"100"
-	,	"bg_blue":		"44"
 	,	"bg_red":		"41"
+	,	"bg_green":		"42"
 	,	"bg_yellow":		"43"
+	,	"bg_blue":		"44"
 	,	"":			""
 	})[.]? //empty
 ;
