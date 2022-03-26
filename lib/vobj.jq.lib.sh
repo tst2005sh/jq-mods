@@ -10,5 +10,6 @@ def assert_vtype($t):
 	end
 ;
 def vobj($t): {"type":$t, ($t): .};
+def vobj($t;$v): $v|vobj($t);
 def vvalue: .[.type];
 '
