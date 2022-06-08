@@ -1,6 +1,6 @@
 
 jq_deps_recursive_del_ifkey=''
-jq_function_recursive_del_ifkey='def recursive_del_ifkey(f): delpaths([paths|select(last|tostring|f)]);'
+jq_function_recursive_del_ifkey='def recursive_del_ifkey(f): delpaths([paths|select(last|strings|f)]);'
 
 # 11:49:48 <    geirha> and a recursive version  delpaths([paths|select(last|endswith("_count"))])
 
@@ -10,4 +10,5 @@ jq_function_recursive_del_ifkey='def recursive_del_ifkey(f): delpaths([paths|sel
 # 13:37:23 <    geirha> or last|tostring|f
 # 13:38:57 <    geirha> but then you won't be able to distinguish between a key "5" and index 5
 # 13:44:13 < emanuele6> it depends on how you want the function to work
-
+# ...
+# 14:01:35 < emanuele6> but wouldn't strings/0 make more sense than tostring/0 in that case?
