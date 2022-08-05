@@ -1,7 +1,6 @@
 
 jq_deps_recursive_del_ifkey=''
-jq_function_recursive_del_ifkey='def recursive_del_ifkey(f): delpaths([paths|select(last|strings|f)]);'
-
+jq_function_recursive_del_ifkey="$(cat "${dir:-.}/jq/recursive_del_ifkey.jq")"
 # 11:49:48 <    geirha> and a recursive version  delpaths([paths|select(last|endswith("_count"))])
 
 # 13:34:27 <    geirha> one quickfix, since the *_count keys are always scalars in your case, is to change paths to paths(scalars)
