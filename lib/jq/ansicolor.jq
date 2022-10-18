@@ -47,7 +47,7 @@ def colorname2ansicolorseq:
 	split("+")|map(ansicolor_name_to_value)|join(";")|"\u001b[\(.)m"
 ;
 def ansicolor($withcolor):
-	map_values(
+	map(
 		if type=="array" then
 			ansicolor($withcolor)
 		elif type=="object" then
