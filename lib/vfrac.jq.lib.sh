@@ -49,6 +49,8 @@ def vfrac_mul($by): vfrac_insert("up";$by);
 
 #def eachother(f): reduce .[] as $item (null;[.,$item]|f);
 
-#def vadd: eachother( (.[0]//0) + .[1] ) ;
-#def vmultiply: eachother( (.[0]//1) * .[1] );
+#def vadd: eachother( (.[0] //0) + .[1] ) ;
+#def vmultiply: eachother( (.[0] //1) * .[1] );
 '
+jq_function_="$(cat "${dir:-.}/jq/.jq")"
+FIXME

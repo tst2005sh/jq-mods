@@ -1,7 +1,7 @@
 
 jq_deps_round_precision='pow'
 jq_function_round_precision='
-def round($n;$base): (pow($base//10;$n)) as $m | (.*$m | round / $m);
+def round($n;$base): (pow($base //10;$n)) as $m | (.*$m | round / $m);
 def round($n): round($n;10);
 '
 
@@ -27,4 +27,5 @@ def round($decimals):
 ;
 #def round: round(0);
 '
+jq_function_="$(cat "${dir:-.}/jq/.jq")"
 # source: https://github.com/joelpurra/jq-math/blob/master/jq/main.jq
