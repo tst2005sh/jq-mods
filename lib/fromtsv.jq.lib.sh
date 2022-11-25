@@ -22,3 +22,4 @@ jq_function_fromtsv='def fromtsv:
 		)
 	)
 ;'
+jq_function_fromtsv="$(cat "${dir:-.}/jq/fromtsv.jq")"
