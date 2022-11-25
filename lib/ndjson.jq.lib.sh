@@ -1,3 +1,5 @@
+echo >&2 "lib/ndjson.jq.lib.sh is obsolete, please use tondjson or fromndjson instead."; exit 1
+
 ndjson2json() {
         jq_stack option -s
 }
