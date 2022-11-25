@@ -1,6 +1,3 @@
-
-jq_deps_vobj='is_in_array assert_type'
-jq_function_vobj='
 def vtype: assert_type("object")| .type?;
 def assert_vtype($t):
 	if $t|type=="string" then
@@ -12,5 +9,3 @@ def assert_vtype($t):
 def vobj($t): {"type":$t, ($t): .};
 def vobj($t;$v): $v|vobj($t);
 def vvalue: .[.type];
-'
-jq_function_vobj="$(cat "${dir:-.}/jq/vobj.jq")"
