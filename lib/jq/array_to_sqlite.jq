@@ -1,8 +1,5 @@
-
-jq_deps_array_to_sqlite=''
-jq_function_array_to_sqlite='
 def ifquote(q): if (type=="null") then "NULL" elif (type=="string") then q else . end;
-def sql_squote: "'\''\( gsub("'\''";"'\'\''") )'\''";
+def sql_squote: "'\( gsub("'";"''") )'";
 def sql_dquote: "\"\( gsub("\"";"\"\"") )\"";
 def sql_tickquote: "`\(.)`";
 def sql_brackquote: "[\(.)]";
@@ -26,5 +23,3 @@ def array_to_sqlite($tablename;primary):
 	"COMMIT;"
 ;
 def array_to_sqlite: array_to_sqlite("data";schema_no_primary_key);
-'
-jq_function_array_to_sqlite="$(cat "${dir:-.}/jq/array_to_sqlite.jq")"
