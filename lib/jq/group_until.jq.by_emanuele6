@@ -1,0 +1,9 @@
+def group_until(condition):
+	[foreach ((.[] | [.]), null) as $i (
+		null;
+		if $i | . == null or any(condition) then { out: (.buf + $i) }
+		else { buf: (.buf + $i) }
+		end;
+		.out | values)]
+;
+# by emanuele6 (1709846732) #jq @liberachat
